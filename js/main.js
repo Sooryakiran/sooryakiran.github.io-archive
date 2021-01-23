@@ -4,7 +4,9 @@ function setup(){
     console.log(mobile);
     // var mobile_url = "m/";
     if(mobile)
-        document.getElementById("box").classList.remove('container');
+
+        window.location.replace("m.html");
+        // document.getElementById("box").classList.remove('container');
     
 
 }
