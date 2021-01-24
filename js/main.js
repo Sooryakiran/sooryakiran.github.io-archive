@@ -8,6 +8,7 @@ function setup(){
         window.location.replace("m.html");
         // document.getElementById("box").classList.remove('container');
     
+        
 
 }
 
@@ -27,3 +28,31 @@ function detectMob() {
 }
 
 setup();
+
+$(document).ready(function () {
+    var leftMargin = 0;
+    var width = $(document).width();
+    var windowWidth = $(window).width();
+    $('.left-arrow').click(function () {
+        $('.scrollable').animate({
+            marginLeft: "+=" + windowWidth 
+        }, "medium");
+
+        $('.right-arrow').show();
+        leftMargin = (leftMargin - windowWidth)
+        if (leftMargin == 0) {
+            $('.left-arrow').hide();
+        }
+    });
+    $('.right-arrow').click(function () {
+        $('.scrollable').animate({
+            marginLeft: "-=" + windowWidth
+        }, "medium");
+
+        $('.left-arrow').show();
+        leftMargin = (leftMargin + windowWidth);
+        if (leftMargin > width - windowWidth) {
+            $('.right-arrow').hide();
+        }
+    });
+});
