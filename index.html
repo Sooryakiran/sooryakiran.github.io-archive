@@ -18,7 +18,8 @@
 
 
 </head>
-<body>
+<body onresize="rewrite()" >
+    <script>0</script>
     <div class="wrapper">
         <div id="box" class="topcontainer">
             <nav class="child navbar topnav navbar-expand-md  topnav justify-content-center">
@@ -63,12 +64,14 @@
                         <div class="tagline para">Deep Learning Architect,<br>Hardware Frontend Engineer</div>
                         <br>
                         <div>
-                            <span class="action-call">
+                            <a href = "#projects" >
+                            <span class="action-call internal">
                                 Projects
                             </span>
+                            </a>
                             
                             <span class="action-call-sec">
-                                Curriculum Vitae
+                                CV
                             </span>
                         </div>
                         
@@ -76,13 +79,16 @@
                   </div>
                   <div class="col-sm-6">
                     <div class="vertical-center">
-                        <img style="width:100%" src="img/Illustration_small.png" >
+                        <img class="imgs" style="width:100%" src="img/Illustration_small.png" >
                     </div>
                   </div>
                 </div>
             </div>
             <section class="about child" id="about">
                 <h1 style="padding: 2.5em 0 0 0">About Me<span style="color:red">.</span></h1>
+                <div class="watermark">
+                    about me.
+                </div>
 
                 <div class="container-fluid" style="width:100%">
                     
@@ -91,12 +97,12 @@
                       <div class="row hero">
                         <div class="col-sm-6">
                             <div class="vertical-center">
-                                <img style="width:100%" src="img/burger.png" >
+                                <img class="imgs" style="width:100%" src="img/burger.png" >
                             </div>
                           </div>
 
-                      <div class="col-sm-6" style="position; absolute; height: 100%;">
-                        <div class="vertical-center texts" style="float:left; padding:">
+                      <div id="about-texts" class="col-sm-6" style="overflow: hidden; position; absolute; height: 100%;">
+                        <div id="about-me" class="vertical-center texts" style="float:right;">
                             
                             Hi!. I am Sooryakiran, a senior undergraduate in Mechanical Engineering from the Indian Institute of Technology Madras. I am a Dual Degree student in Biomedical engineering. 
 I am interested in working on Deep Neural Networks & local learning rules, hardware architectures for deep neural networks, and Computational Neuroscience. <br><br>
@@ -106,30 +112,168 @@ Things I hate: personalised feeds (Things like these increase polarization; furt
 Politics: still debating myself about "Communism doesn't work!" and "Capitalism kills!"</div>
                       </div>
                     </div>
+                    <div class="row hero">
+                        <div class="col-sm-6"></div>
                 </div>
             </section>
-            <section class="about child" id="projects">
-                <h1 style="padding: 2.5em 0 0 0">Projects<span style="color:red">.</span></h1>
-
-                <!-- <div class="container-fluid" style="width:100%">
-                    <a href="#" class="left-arrow" style="display:none">&laquo;</a>
-                    <a href="#" class="right-arrow">&raquo;</a>
-
-                    <div class="scrollable">
-                        <input type="checkbox" id="c6" name="approved" /><label for="c6"><span><div class="glyphicon glyphicon-calendar"></div>Last 30 Days</span></label>
-
-                        <input type="checkbox" id="c7" name="approved" /><label for="c7"><span><div class="glyphicon glyphicon-calendar"></div>Last 60 Days</span></label>
-
-                        <input type="checkbox" id="c8" name="approved" /><label for="c8"><span><div class="glyphicon glyphicon-calendar"></div>Last 90 Days</span></label>
-                        
-                        <input type="checkbox" id="c9" name="approved" /><label for="c9"><span><div class="glyphicon glyphicon-calendar"></div>Last 180 Days</span></label>
-
-                        <input type="checkbox" id="c10" name="approved" /><label for="c10"><span><div class="glyphicon glyphicon-calendar"></div>Last 365 Days</span></label>
-                            
+            <section class="projects child" id="projects">
+                <h1 style="padding: 2.5em 0 0 0">Selected Projects<span style="color:red">.</span></h1>
+                    <!-- <div class="watermark">projects.</div> -->
+                <br><br>
+                <div class="container-fluid" style="width:100%">
+              
+                    <div class="row child project-rows" >
+                        <div  class="col-xl-6">
+                               <div class="card">
+                                   <h2>Domain Specific Hardware Accelerators: Vector Processing Units<span style="color:red">.</span></h2> 
+                                   <div class="card-content"><i>(2020, Coursework for CS6230: CAD for VLSI design)</i><br><br>A vector processor implementing Vector Negate and Statistics Minima in accordance with ARM CMSIS implemented in Bluespec, 
+                                    along with an inorder 2 stage pipelined CPU with custom instruction set.</div>
+                                    <div class="card-imgs">
+                                        Related Links:<br>
+                                        <span>
+                                            <a target="_blank" href="https://arm-software.github.io/CMSIS_5/DSP/html/index.html"><img src="img/arm.png" class="logo"></a> 
+                                            <a target="_blank" href="https://bluespec.com/"><img src="img/bspec.png" style="height:3em" class="logo"></a>
+                                        </span>
+                                        
+                                            <span class="btn-cont">
+                                                <a target="_blank" href="https://github.com/Sooryakiran/Domain-Specific-Hardware-Accelerator-VLSI-CAD-Project/" >
+                                                <div class="card-btn">
+                                                    <center>
+                                                    <div>➤ Github</div>
+                                                    </center>
+                                                </div>
+                                                </a>
+                                            </span>
+                                    </div>
+                               </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card">
+                                <h2>dotV : A C++ library for parameterised Verilog code generation<span style="color:red">.</span></h2> 
+                                <div class="card-content"><i>(2020, Coursework for CS6230: CAD for VLSI design)</i><br><br> A library to generate parameterized Verilog code from C++. Allows you to assemble Verilog modules in C++, use C++ syntax to dynamically generate complex connections, parameterize code, and ultimately get the Verilog code automatically generated.</div>
+                                 <div class="card-imgs">
+                                     <!-- Related Links:<br>
+                                     <span>
+                                         <a target="_blank" href="https://arm-software.github.io/CMSIS_5/DSP/html/index.html"><img src="img/arm.png" class="logo"></a> 
+                                         <a target="_blank" href="https://bluespec.com/"><img src="img/bspec.png" style="height:3em" class="logo"></a>
+                                     </span> -->
+                                     
+                                         <span class="btn-cont">
+                                             <a target="_blank" href="https://github.com/Sooryakiran/dotV" >
+                                             <div class="card-btn">
+                                                 <center>
+                                                 <div>➤ Github</div>
+                                                 </center>
+                                             </div>
+                                             </a>
+                                         </span>
+                                 </div>
+                            </div>
+                        </div>
                     </div>
 
+                    <div class="row child project-rows" >
+                        <div  class="col-xl-6">
+                               <div class="card">
+                                   <h2>Oscillatory Neural Networks<span style="color:red">.</span></h2> 
+                                   <div class="card-content"><i>(2019, CNS Lab, IITM)</i><br><br>I worked with Prof. Srinivasa Chakravarthy and Dipayan Biswas, Computational Neuroscience Lab, IIT Madras modelling neuronal ensembles as complex hopf oscillators. More details about our work can be found in the following links</div>
+                                    <div class="card-imgs">
+                                        Related Links:<br>
+                                        <span>
+                                            <a target="_blank" href="https://oscillatory-neural-networks.github.io/oscillatory-neural-networks/"><img src="img/onn.png" style="height:3em" class="logo"></a> 
+                                            <a target="_blank" href="https://biotech.iitm.ac.in/Faculty/CNS_LAB/Team.html"><img src="img/cns.png" style="height:3em" class="logo"></a>
+                                        </span>
+                                        
+                                            <span class="btn-cont">
+                                                <a target="_blank" href="https://www.biorxiv.org/content/10.1101/2020.03.28.013292v1" >
+                                                <div class="card-btn">
+                                                    <center>
+                                                    <div>➤ Preprint</div>
+                                                    </center>
+                                                </div>
+                                                </a>
+                                            </span>
+                                    </div>
+                               </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card">
+                                <h2>Team Abhiyaan<span style="color:red">.</span></h2> 
+                                <div class="card-content"><i>(2017-2019, Center for Innovation, IITM)</i><br><br>I worked with Team Abhiyaan, the autonomous ground vehicle team of IIT Madras. Team Abhiyaan was awarded first runnerup in the Intelligent Ground Vehicle Competition (IGVC) 2019, hosted by Oakland University, MI, USA and sponsored by the US Army. I worked on the entire computer vision pipeline for lane detection and following. Deep segmentation models were trained in Tensorflow and integrated with ROS. I also worked on making the vehicle JAUS (Joint Architecture for Unmanned Systems) compatible. More on Team Abhiyaan can be found below. 
+                                </div>
+                                 <div class="card-imgs">
+                                     Related Links:<br>
+                                     <span>
+                                         <a target="_blank" href="https://www.teamabhiyaan.com/"><img src="img/abhiyaan.png" style="height: 3em" class="logo"></a> 
+                                         <a target="_blank" href="http://cfi.iitm.ac.in/wordpress/"><img src="img/cfi.png" style="height:3em" class="logo"></a>
+                                     </span>
+                                     
+                                         <span class="btn-cont">
+                                             <a target="_blank" href="http://www.igvc.org/" >
+                                             <div class="card-btn">
+                                                 <center>
+                                                 <div>➤ IGVC</div>
+                                                 </center>
+                                             </div>
+                                             </a>
+                                         </span>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row child project-rows" >
+                        <div  class="col-xl-6">
+                               <div class="card">
+                                   <h2>SinGAN, an ablation study<span style="color:red">.</span></h2> 
+                                   <div class="card-content"><i>(2019, Coursework for CS7015: Deeplearning)</i><br><br>This project was completed as a part of course project in Deep Learning. SinGAN (ICCV 2019) proposes an unconditional generative model to make photo realistic similar images from a single natural image. This can be used for many purposes like image impainting, super resolution, random sample generation etc. Apart from doing an ablation study on the algorithm, we also extended the network to generate similar samples of images from edge maps </div>
+                                    <div class="card-imgs">
+                                        <!-- Related Links:<br>
+                                        <span>
+                                            <a target="_blank" href="https://arm-software.github.io/CMSIS_5/DSP/html/index.html"><img src="img/arm.png" class="logo"></a> 
+                                            <a target="_blank" href="https://bluespec.com/"><img src="img/bspec.png" style="height:3em" class="logo"></a>
+                                        </span> -->
+                                        
+                                            <span class="btn-cont">
+                                                <a target="_blank" href="https://sooryakiran.github.io/sooryakiran/docs/sinGAN.pdf" >
+                                                <div class="card-btn">
+                                                    <center>
+                                                    <div>➤ Report</div>
+                                                    </center>
+                                                </div>
+                                                </a>
+                                            </span>
+                                    </div>
+                               </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card">
+                                <h2>Convolutional Neural Networks using Intel x86 AVX instructions<span style="color:red">.</span></h2> 
+                                <div class="card-content"><i>(2020, Coursework for CS6886: Systems Engineering for Deeplearning)</i><br><br>This was done as a part of course work in Systems Engineering for Deep Learning. Intel x86 AVX instructions were used to build the forward pass of AlexNet in C++. </div>
+                                 <div class="card-imgs">
+                                     <!-- Related Links:<br>
+                                     <span>
+                                         <a target="_blank" href="https://arm-software.github.io/CMSIS_5/DSP/html/index.html"><img src="img/arm.png" class="logo"></a> 
+                                         <a target="_blank" href="https://bluespec.com/"><img src="img/bspec.png" style="height:3em" class="logo"></a>
+                                     </span> -->
+                                     
+                                         <span class="btn-cont">
+                                             <a target="_blank" href="https://github.com/Sooryakiran/Convolution-with-AVX" >
+                                             <div class="card-btn">
+                                                 <center>
+                                                 <div>➤ Github</div>
+                                                 </center>
+                                             </div>
+                                             </a>
+                                         </span>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
 
-                </div> -->
+                    
+      
+
+                </div>
             </section>
         </div>
     </div>
