@@ -15,15 +15,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
-
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body onresize="rewrite()" >
     <script>0</script>
-    <div class="wrapper">
+    <a class="up" id="upid" href="#box">▲</a>
+    <div class="wrapper" id="wrapid">
         <div id="box" class="topcontainer">
-            <nav class="child navbar topnav navbar-expand-md  topnav justify-content-center">
-                <span class="brand">Sooryakiran</span><span style="color:red" class="brand accent">.</span>
+            <nav data-aos="fade-up" class="child navbar topnav navbar-expand-md  topnav justify-content-center">
+                <span class="brand" data-aos="fade-up">Sooryakiran</span><span  style="color:red" class="brand accent">.</span>
                 <!-- <a class="navbar-brand on-dark brand" href="#">Sooryakiran<span class="accent">.</span></a> -->
                 <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                   Toggle
@@ -52,7 +53,7 @@
                 </div>
             </nav>
     
-            <div class="container-fluid" style="width:100%">
+            <div data-aos="fade-up" class="container-fluid" style="width:100%">
                 <div class="row hero">
                   <div class="col-sm-6" style="position; absolute; height: 100%;">
                     <div class="vertical-center" style="float:left">
@@ -84,7 +85,7 @@
                   </div>
                 </div>
             </div>
-            <section class="about child" id="about">
+            <section class="about child" id="about" >
                 <h1 style="padding: 2.5em 0 0 0">About Me<span style="color:red">.</span></h1>
                 <div class="watermark">
                     about me.
@@ -427,4 +428,5 @@ July 2008, Eremo, Italy
     
     <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
 </body>
+
 </html>

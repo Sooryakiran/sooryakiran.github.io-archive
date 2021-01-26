@@ -38,6 +38,9 @@ function isOverflown(element) {
 
 $(document).ready(function () {
     rewrite();
+    document.getElementById("wrapid").addEventListener("scroll", myScrollFunc);
+    upid = document.getElementById("upid");
+    AOS.init();
 });
 
 
@@ -72,3 +75,16 @@ function submit_form() {
 
     
 }
+
+
+
+var myScrollFunc = function() {
+  var y = document.getElementById("wrapid").scrollTop;
+  console.log(y);
+  if (y >= window.screen.height - 300) {
+      upid.style.opacity = 1.0; 
+  } else {
+      upid.style.opacity = 0.0; 
+  }
+};
+
