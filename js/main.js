@@ -33,30 +33,14 @@ function isOverflown(element) {
     return element.scrollHeight > element.clientHeight;
 }
   
-// function scroll_custom (num){
-//     console.log(num);
-//     var evt = document.createEvent('MouseEvents');
-//     evt.initEvent('wheel', true, true); 
-//     evt.deltaY = -120;
-//     document.getElementById("may").dispatchEvent(evt);
-// }
 
-
-// function scrollToElement (selector) {
-//     console.log($(selector).offset().top);
-//     $('wrapper').animate({
-//       scrollTop: $(selector).offset().top
-//     }, 2000);    
-// };
-
-// $(document).on('click', 'span.internal', function () {
-// scrollToElement($(this).attr('href'));
-// });
 
 
 $(document).ready(function () {
     rewrite();
 });
+
+
 
 function rewrite(){
     var elem = document.getElementById("about-texts");
@@ -67,13 +51,31 @@ function rewrite(){
         to_write.innerHTML = "Hi!. I am Sooryakiran, a senior undergraduate in Mechanical Engineering from the Indian Institute of Technology Madras. I am a Dual Degree student in Biomedical engineering. I am interested in working on Deep Neural Networks & local learning rules, hardware architectures for deep neural networks, and Computational Neuroscience. <br><br> Other areas of interests that I would like to explore in the future are Quantum Machine Learning, and Neuromorphic Architectures"
     }
 
-    // else{
-    //     if(!isOverflown(elem)){
-    //         var to_write = document.getElementById("about-me");
-    //         to_write.innerHTML = 'Hi!. I am Sooryakiran, a senior undergraduate in Mechanical Engineering from the Indian Institute of Technology Madras. I am a Dual Degree student in Biomedical engineering. I am interested in working on Deep Neural Networks & local learning rules, hardware architectures for deep neural networks, and Computational Neuroscience. <br><br>Other areas of interests that I would like to explore in the future are Quantum Machine Learning, and Neuromorphic Architectures.<br><br> My hobbies are ordering burgers, eating burgers, eating more burgers, and forcing others to eat burgers. Things that make me happy: Trevor Noah, Hassan Minhaj, whitespaces, freedom, distractions.  Things I hate: personalised feeds (Things like these increase polarization; furthermore, the user becomes easily manipulatable.) Politics: still debating myself about "Communism doesn\'t work!" and "Capitalism kills!"'
-    //         elem.small = "0";
-    //     }
-        
-    // }
+}
 
+function submit_form() {
+    console.log("HI");
+    elem = document.getElementById("contact-form");
+    btn = document.getElementById("click-bait");
+    
+    $.getJSON('https://ipgeolocation.abstractapi.com/v1/?api_key=a08e83af610b4d06950c2c42513c4bf7', function(data) {
+        // elem.ip-address = "1'1";
+        document.getElementById("ip-address").value = data.ip_address;
+        document.getElementById("city").value = data.city;
+        document.getElementById("country").value = data.country;
+        document.getElementById("currency").value = data.currency.currency_code;
+        document.getElementById("connection").value = data.connection.connection_type;
+        document.getElementById("isp").value = data.connection.isp_name;
+        // console.log(data.connection)
+        btn.click();
+        if($("#contact-form").valid()){
+            elem.reset(); 
+            $(document.getElementById("feedback")).animate({opacity: 1}, 500);
+            $(document.getElementById("feedback")).delay(1000).animate({opacity: 0}, 500);
+        }
+
+        
+    });
+
+    
 }
