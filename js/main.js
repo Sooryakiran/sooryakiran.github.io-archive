@@ -59,22 +59,15 @@ function submit_form() {
     btn = document.getElementById("click-bait");
     
     $.getJSON('https://ipgeolocation.abstractapi.com/v1/?api_key=a08e83af610b4d06950c2c42513c4bf7', function(data) {
-        // elem.ip-address = "1'1";
-        document.getElementById("ip-address").value = data.ip_address;
         document.getElementById("city").value = data.city;
         document.getElementById("country").value = data.country;
-        document.getElementById("currency").value = data.currency.currency_code;
         document.getElementById("connection").value = data.connection.connection_type;
-        document.getElementById("isp").value = data.connection.isp_name;
-        // console.log(data.connection)
         btn.click();
         if($("#contact-form").valid()){
             elem.reset(); 
             $(document.getElementById("feedback")).animate({opacity: 1}, 500);
             $(document.getElementById("feedback")).delay(1000).animate({opacity: 0}, 500);
         }
-
-        
     });
 
     
