@@ -29,16 +29,17 @@ $(document).ready(function () {
     document.getElementById("wrapid").addEventListener("scroll", myScrollFunc);
     includeHTML();
     
+
     // document.getElementById('email').on('focus', function() {
     //     console.log("NAME")
     //     document.body.scrollTop = document.getElementById('email').offset().top;
     // });
 
     
-    // Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
-    //     console.log('images finished loading');
-    //     AOS.init();
-    // });
+    Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+        console.log('images finished loading');
+        AOS.init();
+    });
 });
 
 
