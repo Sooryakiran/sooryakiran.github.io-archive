@@ -42,7 +42,7 @@ $(document).ready(function () {
     upid = document.getElementById("upid");
     
     Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
-        console.log('images finished loading');
+        includeHTML();
         AOS.init();
     });
 });
@@ -53,7 +53,6 @@ function rewrite(){
     var elem = document.getElementById("about-texts");
     // if (elem.small == "0"){
     if(isOverflown(elem)) {
-        console.log("Yeah")
         var to_write = document.getElementById("about-me");
         to_write.innerHTML = "Hi!. I am Sooryakiran, a senior undergraduate in Mechanical Engineering from the Indian Institute of Technology Madras. I am a Dual Degree student in Biomedical engineering. I am interested in working on Deep Neural Networks & local learning rules, hardware architectures for deep neural networks, and Computational Neuroscience. <br><br> Other areas of interests that I would like to explore in the future are Quantum Machine Learning, and Neuromorphic Architectures"
     }
@@ -61,7 +60,6 @@ function rewrite(){
 }
 
 function submit_form() {
-    console.log("HI");
     elem = document.getElementById("contact-form");
     btn = document.getElementById("click-bait");
     
@@ -84,7 +82,6 @@ function submit_form() {
 
 var myScrollFunc = function() {
   var y = document.getElementById("wrapid").scrollTop;
-  console.log(y);
   if (y >= window.screen.height - 300) {
       upid.style.opacity = 1.0; 
   } else {
@@ -92,3 +89,31 @@ var myScrollFunc = function() {
   }
 };
 
+
+function includeHTML() {
+    var z, i, elmnt, file, xhttp;
+    /* Loop through a collection of all HTML elements: */
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+      elmnt = z[i];
+      /*search for elements with a certain atrribute:*/
+      file = elmnt.getAttribute("load");
+      if (file) {
+        /* Make an HTTP request using the attribute value as the file name: */
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4) {
+            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+            /* Remove the attribute, and call this function once more: */
+            elmnt.removeAttribute("load");
+            includeHTML();
+          }
+        }
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        /* Exit the function: */
+        return;
+      }
+    }
+  }
