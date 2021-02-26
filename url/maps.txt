@@ -1,2 +1,3 @@
 medical_materials->https://drive.google.com/drive/folders/15H2QhuwoV71XMvr0Mup9MP2lZiwE75ic?usp=sharing
 home->https://sooryakiran.github.io
+med->https://drive.google.com/drive/folders/15H2QhuwoV71XMvr0Mup9MP2lZiwE75ic?usp=sharing
