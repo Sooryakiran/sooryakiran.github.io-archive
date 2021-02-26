@@ -1,3 +1,4 @@
 medical_materials->https://drive.google.com/drive/folders/15H2QhuwoV71XMvr0Mup9MP2lZiwE75ic?usp=sharing
 home->https://sooryakiran.github.io
 med->https://drive.google.com/drive/folders/15H2QhuwoV71XMvr0Mup9MP2lZiwE75ic?usp=sharing
+igvc_usmil->https://www.army.mil/article/223098/igvc_gives_future_scientists_engineers_chance_to_face_real_world_robotic_vehicle_scenarios
