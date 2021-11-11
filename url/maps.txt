@@ -5,3 +5,4 @@ igvc_usmil->https://www.army.mil/article/223098/igvc_gives_future_scientists_eng
 metrology_asg->https://colab.research.google.com/gist/Sooryakiran/112d8f00d76c074fc5b0ed4a9e9e3928/metrology-assignment.ipynb
 cad_report->https://raw.githubusercontent.com/Sooryakiran/Domain-Specific-Hardware-Accelerator-VLSI-CAD-Project/main/Final%20Report.pdf
 avx_report->https://raw.githubusercontent.com/Sooryakiran/Convolution-with-AVX/master/ME17B174_A2.pdf
+ccbr->https://ccbr.humanbrain.in/course-on-machine-intelligence-and-brain-research/
