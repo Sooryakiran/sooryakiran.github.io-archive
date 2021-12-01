@@ -1,0 +1,78 @@
+<form
+    id="contact-form"
+    action="https://formspree.io/f/mleozzaq"
+    target="dummyframe"
+    method="POST"
+>
+    <div class="row project-rows">
+        <div class="col-xl-5">
+            <div class="input-field">
+                <h4 class="flat">
+                    Name<span style="color: red; font-size: 18px">*</span>
+                </h4>
+                <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    placeholder="Example: Ponjikkara Keshavan"
+                    required="True"
+                />
+            </div>
+            <div class="input-field">
+                <h4 class="flat">
+                    Email Address<span style="color: red; font-size: 18px"
+                        >*</span
+                    >
+                </h4>
+                <input
+                    id="email"
+                    type="email"
+                    name="_replyto"
+                    required="True"
+                    placeholder="Example: ponjikkara@kalyanaraman.com"
+                />
+            </div>
+            <div class="input-field">
+                <h4 class="flat">
+                    Phone<span style="color: red; font-size: 18px">*</span>
+                </h4>
+                <input
+                    id="phone"
+                    type="tel"
+                    name="phone"
+                    placeholder="Example: +91 987 654 3210"
+                    required="True"
+                />
+            </div>
+        </div>
+        <div class="col-xl-1"></div>
+        <div class="col-xl-5">
+            <div class="input-field">
+                <h4 class="flat">
+                    Message<span style="color: red; font-size: 18px"></span>
+                </h4>
+                <textarea
+                    id="msg"
+                    style="height: 5em"
+                    name="comment"
+                    placeholder="Example: Hi Sooryakiran!"
+                ></textarea>
+            </div>
+            <input class="submit flat" type="button" onclick="submit_form()" value="Send" />
+
+            <span id="feedback" class="message"> Message Sent! </span>
+            <input
+                id="click-bait"
+                type="submit"
+                value="send"
+                style="display: none"
+            />
+        </div>
+    </div>
+
+    <div style="display: none">
+        <input type="text" id="city" name="city" value="UNK" />
+        <input type="text" id="country" name="country" value="UNK" />
+        <input type="text" id="connection" name="connection" value="UNK" />
+    </div>
+</form>

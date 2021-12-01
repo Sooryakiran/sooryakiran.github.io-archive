@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+}
+
+img {
+    filter: saturate(0) brightness(1.1) contrast(1.1);
+    object-fit: cover;
+}
+
+.flat {
+    font-family: "Roboto", sans-serif;
+    /* font-weight: bold; */
+}
+
+.spread {
+    color: red;
+    /* font-family: "Roboto", sans-serif; */
+    letter-spacing: 0.5em;
+    text-transform: lowercase;
+}
+section {
+    margin-bottom: 2em;
+}
+
+h1 {
+    font-size: 72px;
+    /* font-weight: 400 !important; */
+}
+
+h2 {
+    font-size: 56px;
+}
+
+.nav-item .nav-link {
+    margin-left: 2em;
+    color: black;
+    /* font-family: "Roboto", sans-serif; */
+    
+    /* letter-spacing: 0.1em; */
+}
+
+.message {
+    transition: all ease 0.5;
+    opacity: 0;
+}
+
+.hero {
+    top: 0;
+    width: 100%;
+    height: 80vh;
+    margin-bottom: 10em;
+    display: flex;
+}
+
+.hero-contents {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+input,
+textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+}
+
+.submit {
+    max-width: 150px;
+    background-color: red;
+    color: white;
+    text-align: left;
+    padding: 0.3em 1em;
+}
+
+.to-top {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+}
+
+.down-to-earth{
+    display: none;
+}
+
+button{
+    padding: 0.3em 1em;
+    width: 170px;
+    border: none;
+    background-color: black;
+    color: white;
+}
+
+button:hover{
+    transform: scale(1.05);
+}
+
+button span{
+    padding-left: 0.5em;
+    font-size: 90%;
+}
+
+footer{
+    background-color: black;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .down-to-earth {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+    }
+    h1 {
+        font-size: 48px;
+    }
+}
