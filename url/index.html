@@ -1,0 +1,54 @@
+<html>
+    <head>
+
+        <meta name="description" content="URL Shortener">
+        <noscript>JavaScript is required to redirect.</noscript>
+
+
+        <script type="text/javascript">
+        var success = false;
+        if (window.location.hash) {
+            // try{
+                data = window.location.hash.slice(1);
+
+                console.log(data);
+
+                var client = new XMLHttpRequest();
+                client.open('GET', './maps.txt');
+
+        
+                client.onreadystatechange = function() {
+                    if(this.readyState == 4){
+                        maps = client.responseText;
+                        map_data = maps.split('\n');
+                        
+                        for(i=0; i<map_data.length; i++){
+                            current_string = map_data[i].split("->");
+                            if(current_string[0]==data){
+                                window.location.replace(current_string[1]);
+                                success = true;
+                            }
+                            else{
+                                console.log("Nop", current_string);
+                            }
+                        }
+                        if (!success)
+                            window.location.replace("https://sooryakiran.github.io");
+                        
+                    }
+                }
+                client.send();
+        }
+
+        else {
+            window.location.replace("https://sooryakiran.github.io");
+        }
+        
+        if (!success){
+            console.log("no Data");
+            
+        }
+        </script>
+
+    </head>
+</html>
