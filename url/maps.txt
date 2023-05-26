@@ -6,3 +6,4 @@ metrology_asg->https://colab.research.google.com/gist/Sooryakiran/112d8f00d76c07
 cad_report->https://raw.githubusercontent.com/Sooryakiran/Domain-Specific-Hardware-Accelerator-VLSI-CAD-Project/main/Final%20Report.pdf
 avx_report->https://raw.githubusercontent.com/Sooryakiran/Convolution-with-AVX/master/ME17B174_A2.pdf
 ccbr->https://ccbr.humanbrain.in/course-on-machine-intelligence-and-brain-research/
+giftcard->https://www.amazon.in/g/EEGMRO25HQUJ63QK?_encoding=UTF8&asin=B018TV9HIM
